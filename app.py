@@ -50,7 +50,7 @@ def webhook():
                     send_message(sender_id,"thanks!")
                 elif (message_text=="Hi"):
                     jsonn=get_user(sender_id)
-                    send_message(sender_id,"Witaj" +jsonn.get("first_name") + " "+ jsonn.get("last_name") )
+                    send_message(sender_id,"Witaj " +jsonn.get("first_name") + " "+ jsonn.get("last_name") )
                 elif (message_text=="whoami"):
                     jsonn=get_user(sender_id)
                     send_message(sender_id, jsonn.get("first_name") + " "+ jsonn.get("last_name") )
