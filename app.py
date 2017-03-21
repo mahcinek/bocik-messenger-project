@@ -48,9 +48,16 @@ def webhook():
 
                 if (message_text=="test"):
                     send_message(sender_id,"thanks!")
+                elif (message_text=="Hi"):
+                    jsonn=get_user(sender_id)
+                    send_message(sender_id,"Witaj" +jsonn.get("first_name") + " "+ jsonn.get("last_name") )
                 elif (message_text=="whoami"):
                     jsonn=get_user(sender_id)
                     send_message(sender_id, jsonn.get("first_name") + " "+ jsonn.get("last_name") )
+                elif (message_text=="1"):
+                    send_message(sender_id, "Wybrano 1")
+                elif (message_text=="2"):
+                    send_message(sender_id, "Wybrano 2")
                 elif (message_text=="getToken"):
                     token = get_token()
                     a, b = token.split("|")
