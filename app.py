@@ -6,7 +6,6 @@ import requests
 from flask import Flask, request
 
 
-
 def create_app():
     app = Flask(__name__)
     app.config['TESTING'] = True
