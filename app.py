@@ -47,15 +47,15 @@ def webhook():
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
 
-                dictcionary ={
-                    "test":send_message(sender_id,"thanks!"),
-                    "1":send_message(sender_id, "Wybrano 1"),
-                    "2":send_message(sender_id, "Wybrano 2"),
-                    "getPerson":get_user(sender_id,token),
-                    "id":send_message(sender_id,sender_id),
-                    "question":send_quick_question(sender_id,"question",["1","2"])
-
-                }
+                # dictcionary ={
+                #     "test":send_message(sender_id,"thanks!"),
+                #     "1":send_message(sender_id, "Wybrano 1"),
+                #     "2":send_message(sender_id, "Wybrano 2"),
+                #     "getPerson":get_user(sender_id,token),
+                #     "id":send_message(sender_id,sender_id),
+                #     "question":send_quick_question(sender_id,"question",["1","2"])
+                #
+                # }
 
                 if messaging_event.get("message"):  # jest wiadomosc
 
