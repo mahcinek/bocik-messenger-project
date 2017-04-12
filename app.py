@@ -62,32 +62,32 @@ def webhook():
                     sender_id = messaging_event["sender"]["id"]        # messenger id wysylajacego
                     recipient_id = messaging_event["recipient"]["id"]  # messenger id odbiorcy
                     message_text = messaging_event["message"]["text"]  # text wiadomosci
-                if message_text in dictcionary:
-                    dictcionary[message_text]
+                # if message_text in dictcionary:
+                #     dictcionary[message_text]
 
-                # if (message_text=="test"):
-                #     send_message(sender_id,"thanks!")
+                if (message_text=="test"):
+                    send_message(sender_id,"thanks!")
                 elif (message_text=="Hi"):
                     jsonn=get_user(sender_id)
                     send_message(sender_id,"Witaj " +jsonn.get("first_name") + " "+ jsonn.get("last_name") )
                 elif (message_text=="whoami"):
                     jsonn=get_user(sender_id)
                     send_message(sender_id, jsonn.get("first_name") + " "+ jsonn.get("last_name") )
-                # elif (message_text=="1"):
-                #     send_message(sender_id, "Wybrano 1")
-                # elif (message_text=="2"):
-                #     send_message(sender_id, "Wybrano 2")
+                elif (message_text=="1"):
+                    send_message(sender_id, "Wybrano 1")
+                elif (message_text=="2"):
+                    send_message(sender_id, "Wybrano 2")
                 elif (message_text=="getToken"):
                     token = get_token()
                     a, b = token.split("|")
                     token=b
                     send_message(sender_id,b)
-                # elif (message_text=="getPerson"):
-                #     get_user(sender_id,token)
-                # elif (message_text=="Id"):
-                #     send_message(sender_id,sender_id)
-                # elif(message_text=="question"):
-                #     send_quick_question(sender_id,"question",["1","2"])
+                elif (message_text=="getPerson"):
+                    get_user(sender_id,token)
+                elif (message_text=="Id"):
+                    send_message(sender_id,sender_id)
+                elif(message_text=="question"):
+                    send_quick_question(sender_id,"question",["1","2"])
                 else: send_message(sender_id, "error")
 
                 if messaging_event.get("delivery"):  # potwierdzenie dostarczenia
